@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+/* ==========================================
+   IndieCRM Premium Design System (2026)
+   Linear × Stripe × Vercel
+========================================== */
+
+/* ---------- Theme Variables ---------- */
+
+:root[data-theme="dark"]{
+  --bg:#050816;
+  --surface:#0c1222;
+  --card:#111827;
+  --border:rgba(255,255,255,.08);
+  --accent:#2563eb;
+}
+
+:root[data-theme="blue"]{
+  --bg:#08111f;
+  --surface:#11224a;
+  --card:#172554;
+  --border:rgba(255,255,255,.08);
+  --accent:#3b82f6;
+}
+
+:root[data-theme="purple"]{
+  --bg:#1b1038;
+  --surface:#26124f;
+  --card:#351a67;
+  --border:rgba(255,255,255,.08);
+  --accent:#8b5cf6;
+}
+
+:root[data-theme="green"]{
+  --bg:#062117;
+  --surface:#0a3a2a;
+  --card:#064e3b;
+  --border:rgba(255,255,255,.08);
+  --accent:#22c55e;
+}
+
+/* ---------- Global Base ---------- */
+
+html{
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at top, rgba(37,99,235,.12), transparent 40%),
+    var(--bg);
+  color:white;
+  font-family:Inter,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Smooth transitions */
+
+*{
+  transition:
+    background-color .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,.12);
+  border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:rgba(255,255,255,.22);
+}
+
+/* ==========================================
+   Reusable Utility Classes
+========================================== */
+
+/* Background */
+
+.crm-bg{
+  background:var(--bg);
+}
+
+/* Sidebar / surface */
+
+.crm-surface{
+  background:var(--surface);
+}
+
+/* Premium Card */
+
+.crm-card{
+  background:linear-gradient(
+    180deg,
+    var(--card),
+    color-mix(in srgb, var(--card) 85%, black)
+  );
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+
+/* Shared panel */
+
+.crm-panel{
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.035),
+    rgba(255,255,255,.015)
+  );
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.03),
+    0 8px 30px rgba(0,0,0,.25);
+}
+
+/* Hover */
+
+.crm-hover{
+  transition:all .25s ease;
+}
+
+.crm-hover:hover{
+  border-color:rgba(59,130,246,.25);
+  box-shadow:0 0 30px rgba(37,99,235,.08);
+  transform:translateY(-2px);
+}
+
+/* Border */
+
+.crm-border{
+  border:1px solid var(--border);
+}
+
+/* Accent Button */
+
+.crm-button{
+  background:linear-gradient(135deg,var(--accent),#1d4ed8);
+  box-shadow:0 0 24px rgba(37,99,235,.25);
+  border-radius:14px;
+}
+
+.crm-button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 0 30px rgba(37,99,235,.35);
+}
+
+/* Secondary Button */
+
+.crm-button-secondary{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+
+.crm-button-secondary:hover{
+  background:rgba(255,255,255,.07);
+}
+
+/* Inputs */
+
+.crm-input{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+
+.crm-input:focus-within{
+  border-color:rgba(59,130,246,.35);
+  box-shadow:0 0 0 3px rgba(37,99,235,.12);
+}
+
+/* Glass (Only for Modals & Dropdowns) */
+
+.crm-modal{
+  background:rgba(17,24,39,.88);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* Notification Dropdown */
+
+.crm-dropdown{
+  background:rgba(17,24,39,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* Table */
+
+.crm-table-row:hover{
+  background:rgba(255,255,255,.03);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);
+}
+
+/* Status Pills */
+
+.crm-pill{
+  border-radius:999px;
+  padding:4px 10px;
+  font-size:12px;
+  border:1px solid transparent;
+}
+
+.crm-pill-success{
+  background:rgba(34,197,94,.10);
+  color:#4ade80;
+  border-color:rgba(34,197,94,.20);
+}
+
+.crm-pill-info{
+  background:rgba(59,130,246,.10);
+  color:#60a5fa;
+  border-color:rgba(59,130,246,.20);
+}
+
+.crm-pill-warning{
+  background:rgba(245,158,11,.10);
+  color:#fbbf24;
+  border-color:rgba(245,158,11,.20);
+}
+
+/* Avatar Glow */
+
+.crm-avatar{
+  box-shadow:0 0 18px rgba(59,130,246,.12);
+}
+
+/* Donut Chart Glow */
+
+.crm-chart-glow{
+  box-shadow:0 0 60px rgba(59,130,246,.18);
+}
